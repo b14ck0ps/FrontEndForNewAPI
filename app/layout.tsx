@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import './globals.css'
 
 export const metadata = {
@@ -12,7 +13,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <nav>
+          <ul className='flex items-center justify-center gap-5 p-5 font-bold text-blue-600'>
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/Add">Add News</Link>
+            </li>
+          </ul>
+        </nav>
+        {children}
+      </body>
     </html>
   )
 }
